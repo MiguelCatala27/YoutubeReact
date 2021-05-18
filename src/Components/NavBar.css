@@ -1,0 +1,13 @@
+img {
+  height: 50px;
+  /* width: 50px; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 25px;
+  align-items: center;
+  background-color: red;
+}
+
