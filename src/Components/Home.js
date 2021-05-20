@@ -33,6 +33,7 @@ const Home = () => {
           type="text"
           placeholder="search for a video"
           id="video"
+          value={userInput}
           onChange={handleInput}
         />
         <button type="submit" value="search">Search</button>
