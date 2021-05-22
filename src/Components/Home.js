@@ -1,30 +1,39 @@
 import React, { useState } from "react";
+import "./Home.css"
+import { Link } from "react-router-dom"
 import axios from "axios";
-require("dotenv").config()
+import DisplayVideo from "./DisplayVideo";
+require("dotenv").config();
 
 const Home = () => {
   const [videoShow, setvideoShow] = useState([]);
   const [userInput, setuserInput] = useState("");
+  // const [singleVideo, setSingleVideo] = useState("")
 
   const fetchVideos = async (e) => {
-      e.preventDefault()
+    e.preventDefault();
     try {
       const res = await axios.get(
         `https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&part=snippet&type=video&q=${userInput}&maxResults=10`
       );
       debugger;
       const items = res.data.items;
-      setvideoShow(items)
+      setvideoShow(items);
     } catch (error) {
-      console.log(error)
-      setvideoShow([])
+      console.log(error);
+      setvideoShow([]);
     }
-    setuserInput("")
+    setuserInput("");
   };
 
   const handleInput = (e) => {
     setuserInput(e.target.value);
   };
+
+  // const handleClick = (e) => {
+  //   setSingleVideo(e.target.value)
+  //   debugger;
+  // }
 
   return (
     <div>
@@ -37,36 +46,40 @@ const Home = () => {
           value={userInput}
           onChange={handleInput}
         />
-        <button type="submit" value="search">Search</button>
+        <button type="submit" value="search">
+          Search
+        </button>
       </form>
-      <ul>
-          {videoShow.map((video) => (
-            <li key={video.id.videoId}>
-              {/* <iframe href={`https://www.youtube.com/watch?v=${video.id.videoId}`}> */}
-                <h3>{video.snippet.title}</h3> 
-              <iframe width="306" height="" src={`https://www.youtube.com/embed/${video.id.videoId}`}>
-                {/* <p>
-                  <img
-                    width="100px"
-                    src={video.snippet.thumbnails.medium.url}
-                    alt=""
-                  />
-                </p>
-                <h3>{video.snippet.title}</h3> */}
-
-              </iframe>
+      <ul className="videoList">
+        {videoShow.map((video, i) => (
+          <li key={video.id.videoId}>
+             <Link to={`/videos/${video.id.videoId}` }>
+               <DisplayVideo videoShow={videoShow}/>
+              {/* <h3>{video.snippet.title}</h3> */}
+              {/* <iframe */}
+              {/* width="306" height="" src=
+              {`https://www.youtube.com/embed/${video.id.videoId}`} */}
+              <p>
+                <img
+                  width="100px"
+                  // height="200px"
+                  src={video.snippet.thumbnails.medium.url}
+                  alt=""
+                />
+              </p>
+              <h3>{video.snippet.title}</h3>
               {/* </iframe> */}
-            </li>
-          ))}
-        </ul>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 export default Home;
 
-
 // added emebeded video on home page
-// need to a tag with for the title 
+// need to a tag with for the title
 // need to load video on another page and add a comment form component
-// css 
+// css
