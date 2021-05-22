@@ -1,0 +1,13 @@
+.List{
+    list-style: none;
+}
+
+.Link{
+  
+    color: black;
+}
+
+.thumbnails {
+    height:180px;
+    width:320px
+}
