@@ -21,8 +21,10 @@ const VideoPage = (props) => {
 
   return (
     <section className="DisplayVideo">
-      <button onClick={props.history.goBack}>Go Back</button>
-      
+      <div id="go-back-button">
+        <button onClick={props.history.goBack}>Go Back</button>
+      </div>
+
       {
         <iframe
           width="420"
@@ -33,13 +35,25 @@ const VideoPage = (props) => {
       <form onSubmit={handleSubmit}>
         <label className="Label">
           Name:
-          <input value={userName} onChange={handleUserName} />
+          <input
+            value={userName}
+            className="comment"
+            onChange={handleUserName}
+          />
         </label>
-        <label>
+        <label className="Label">
           Comment:
-          <input value={comment} onChange={handleComment} />
+          <input
+            value={comment}
+            className="comment1"
+            onChange={handleComment}
+          />
         </label>
-        <button type="submit">Submit</button>
+        <div id="submit-button">
+          <button type="submit">
+            Submit
+          </button>
+        </div>
       </form>
       {commentList.map((commentObj) => {
         return (

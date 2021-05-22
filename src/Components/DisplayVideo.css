@@ -1,10 +1,42 @@
-.DisplayVideo{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+.DisplayVideo {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
+  padding-top: 20px;
 }
 
-.Label{
-    display: flex;
+.Label {
+  display: flex;
+  padding: 10px;
+}
+
+input {
+  border-style: ridge;
+  width: 400px;
+  /* align-items: center; */
+}
+
+.comment1 {
+  width: 371px;
+}
+
+iframe {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-style: none;
+}
+
+#go-back-button {
+  width: 100%;
+  background-color: black;
+}
+
+#submit-button {
+  width: 100%;
+  background-color: black;
+}
+
+button {
+  background-color: white;
 }

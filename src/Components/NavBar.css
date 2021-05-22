@@ -1,13 +1,26 @@
 img {
   height: 50px;
+  /* padding-top: 5px; */
   /* width: 50px; */
 }
 
 nav {
+  padding-top: 7px;
   display: flex;
   justify-content: space-evenly;
   font-size: 25px;
   align-items: center;
   background-color: red;
 }
+
+.About {
+  height: 50px;
+  font-weight: bolder;
+  color: black;
+}
+
+.About:hover {
+  color: white;
+}
+
 
