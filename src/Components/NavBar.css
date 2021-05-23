@@ -1,5 +1,6 @@
 img {
   height: 50px;
+  align-items: center;
   /* padding-top: 5px; */
   /* width: 50px; */
 }
@@ -10,13 +11,11 @@ nav {
   justify-content: space-evenly;
   font-size: 25px;
   align-items: center;
-  background-color: red;
+  background-color: black;
 }
 
 .About {
   height: 50px;
-  font-weight: bolder;
-  color: black;
 }
 
 .About:hover {

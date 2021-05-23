@@ -7,14 +7,14 @@
 }
 
 .Label {
-  display: flex;
+  flex-direction: column;
   padding: 10px;
+  /* align-items: center; */
 }
 
 input {
   border-style: ridge;
   width: 400px;
-  /* align-items: center; */
 }
 
 .comment1 {
@@ -29,12 +29,12 @@ iframe {
 
 #go-back-button {
   width: 100%;
-  background-color: black;
+  background-color: red;
 }
 
 #submit-button {
   width: 100%;
-  background-color: black;
+  background-color: red;
 }
 
 button {

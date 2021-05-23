@@ -1,19 +1,23 @@
-import React from 'react';
-import './NavBar.css'
-import { NavLink } from 'react-router-dom'
-
+import React from "react";
+import "./NavBar.css";
+import { NavLink } from "react-router-dom";
+import Icon from "./elements/OilPaintingAbout.png";
 
 const NavBar = () => {
-    return (
-        <nav>
-            <NavLink to ='/'>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="Yt logo" />
-            </NavLink>
-            <NavLink to='/about' className="About">About</NavLink>
+  return (
+    <nav>
+      <NavLink to="/">
+        <img
+          src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+          alt="Yt logo"
+        />
+        <NavLink to="default" />
+      </NavLink>
+      <NavLink to="/about" className="About">
+        <img src={Icon} alt="icon" />
+      </NavLink>
+    </nav>
+  );
+};
 
-
-        </nav>
-    )
-}
-
-export default NavBar
+export default NavBar;

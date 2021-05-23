@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import "./DisplayVideo.css";
 
 const VideoPage = (props) => {
   const [userName, setUserName] = useState("");
   const [comment, setComment] = useState("");
   const [commentList, setCommentList] = useState([]);
+  let history = useHistory();
+  const { id } = useParams();
 
   const handleUserName = (e) => {
     setUserName(e.target.value);
   };
+
   const handleComment = (e) => {
     setComment(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setCommentList((prevComment) => [...prevComment, { [userName]: comment }]);
@@ -19,17 +24,22 @@ const VideoPage = (props) => {
     setComment("");
   };
 
+  const GoBack = () => {
+    debugger;
+    history.push("/");
+  };
+
   return (
     <section className="DisplayVideo">
       <div id="go-back-button">
-        <button onClick={props.history.goBack}>Go Back</button>
+        <button onClick={GoBack}>Go Back</button>
       </div>
 
       {
         <iframe
           width="420"
           height="315"
-          src={`https://www.youtube.com/embed/${props.match.params.id}`}
+          src={`https://www.youtube.com/embed/${id}`}
         ></iframe>
       }
       <form onSubmit={handleSubmit}>
@@ -41,6 +51,7 @@ const VideoPage = (props) => {
             onChange={handleUserName}
           />
         </label>
+        <br></br>
         <label className="Label">
           Comment:
           <input
@@ -50,9 +61,7 @@ const VideoPage = (props) => {
           />
         </label>
         <div id="submit-button">
-          <button type="submit">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </div>
       </form>
       {commentList.map((commentObj) => {

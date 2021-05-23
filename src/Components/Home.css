@@ -1,13 +1,15 @@
-.List{
-    list-style: none;
+form {
+    width: 100%;
+    align-items: center;
 }
 
-.Link{
-  
-    color: black;
-}
+/* input {
+} */
 
-.thumbnails {
-    height:180px;
-    width:320px
+div {
+    /* display: flex; */
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
 }
