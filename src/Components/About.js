@@ -16,7 +16,7 @@ export default function About() {
       <h4>Carlo Echeverri</h4>
       <p>Carlo Echeverri Description</p>
       <h4>Miguel Garcia</h4>
-      <p>Miguel Garcia Description</p>
+      <p>Software engineer passionate about diversity in tech.</p>
     </div>
   );
 }

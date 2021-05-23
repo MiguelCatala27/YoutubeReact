@@ -9,7 +9,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [videoShow, setvideoShow] = useState([]);
+  const [videoShow, setVideoShow] = useState([]);
   const [input, setInput] = useState("");
 
   const fetchVideos = async () => {
@@ -17,7 +17,7 @@ function App() {
       const res = await axios.get(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${input}&type=video&key=${process.env.REACT_APP_API_KEY}`
       );
-      setvideoShow(res.data.items);
+      setVideoShow(res.data.items);
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <NavBar />
+        <NavBar videoShow={videoShow} setVideoShow={setVideoShow} />
         <Switch>
           <Route path={"/videos/:id"}>
             <DisplayVideo />
