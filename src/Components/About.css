@@ -1,0 +1,11 @@
+p {
+    margin:auto;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+a{
+    color: grey;
+    display: flex;
+    justify-content: center;
+}

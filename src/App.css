@@ -1,10 +1,11 @@
 .app {
+  /* align-items: center; */
   text-align: center;
-  
+  font-family: "Monaco", "Courier New", monospace;
 }
 
 body{
-  background-color: rgb(47, 50, 54);
+  /* background-color: rgb(47, 50, 54); */
 }
 
 
