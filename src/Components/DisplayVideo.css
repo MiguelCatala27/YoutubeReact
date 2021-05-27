@@ -51,3 +51,19 @@ button {
 input{
     border:none
 }
+
+.comment_form{
+    display: flex;
+    width: 420px;
+    background-color: rgb(143, 136, 136);
+    /* text-align: justify; */
+    /* justify-content: space-around; */
+
+}
+
+.comments{
+ justify-content: flex-start;
+ /* background-color: red; */
+ /* margin-right: 200px; */
+
+}

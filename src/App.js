@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react"
 import NavBar from "./Components/NavBar";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Components/Home";
@@ -11,6 +12,12 @@ import axios from "axios";
 function App() {
   const [videoShow, setVideoShow] = useState([]);
   const [input, setInput] = useState("");
+
+useEffect(() => {
+  document.title = "MCM Youtube"
+
+  
+}, [])
 
   const fetchVideos = async () => {
     try {

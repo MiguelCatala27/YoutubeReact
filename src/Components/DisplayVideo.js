@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import "./DisplayVideo.css";
 
-let uud = 1
+let uud = 1;
 const VideoPage = (props) => {
   const [userName, setUserName] = useState("");
   const [comment, setComment] = useState("");
@@ -19,14 +19,17 @@ const VideoPage = (props) => {
   };
 
   const removeComment = (id) => {
-      const commentArr = commentList.filter((item) => item.id !== id)
-      setCommentList(commentArr)
-  }
+    const commentArr = commentList.filter((item) => item.id !== id);
+    setCommentList(commentArr);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // const newComment = {id: uud++ }
-    setCommentList((prevComment) => [...prevComment, { "name": userName, "comment": comment, "id": uud++ }]);
+    setCommentList((prevComment) => [
+      ...prevComment,
+      { name: userName, comment: comment, id: uud++ },
+    ]);
     setUserName("");
     setComment("");
   };
@@ -76,15 +79,14 @@ const VideoPage = (props) => {
         <div id="submit-button">
           <button type="submit">Submit</button>
         </div>
+      <hr></hr>
       </form>
       {commentList.map((commentObj) => {
-        return (
-          <div>
-              <h3>{commentObj.name}</h3>
-              <p>{commentObj.comment}</p>
-            {/* <h3>{Object.keys(commentObj)}</h3>
-            <p>{Object.values(commentObj)}</p> */}
-            <button onClick={()=> removeComment(commentObj.id)}>x</button>
+          return (
+              <div className="comment_form"> 
+            <p className="comments">{commentObj.name}: {commentObj.comment}</p>
+            {/* <p>{commentObj.comment}</p> */}
+            <button onClick={() => removeComment(commentObj.id)}>x</button>
           </div>
         );
       })}

@@ -55,6 +55,20 @@ export default function About() {
 
       <h4>Miguel Garcia</h4>
       <p>Software engineer passionate about diversity in tech.</p>
+      <a
+        href="https://github.com/garcia13"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+      <a
+        href="https://github.com/garcia13"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn
+      </a>
     </div>
   );
 }

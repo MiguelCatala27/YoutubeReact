@@ -9,3 +9,7 @@ a{
     display: flex;
     justify-content: center;
 }
+
+a:hover{
+    color:red;
+}
